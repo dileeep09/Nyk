@@ -6,32 +6,45 @@ import {
   Image,
   ImageBackground,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {IMAGES} from '../Utilities/Images';
 import CustomButton from '../Components/CustomButton';
 import {COLORS} from '../Utilities/AppColors';
 import Tracker from '../Components/Tracker';
 import {useNavigation} from '@react-navigation/native';
 import Logo from '../Components/Logo';
-
+import {useSelector} from 'react-redux';
+import Loader from '../Components/Loader';
 const Splash = () => {
   const navigation = useNavigation();
+  const [checkLogin, setCheckLogin] = useState(false);
+  const getLogin = useSelector(state => state?.getLogin);
+  useEffect(() => {
+    setTimeout(() => {
+      if (getLogin) {
+        navigation.replace('Home');
+      }
+      setCheckLogin(true);
+    }, 2000);
+  }, []);
+  // handle buttonPress
   const handleNavigation = screen => {
     if (screen == 'Login') {
-      navigation.navigate('Login');
+      navigation.replace('Login');
     } else {
-      navigation.navigate('Signup');
+      navigation.replace('Signup');
     }
   };
   return (
     <SafeAreaView style={styles.container}>
+      {!checkLogin && <Loader show={false} />}
       <ImageBackground
         source={IMAGES.splashImage}
         style={styles.imageStyle}
         resizeMode="cover">
         <View style={styles.overlay} />
         <View style={styles.contentContainer}>
-            <Logo/>
+          <Logo />
           <Image
             source={IMAGES.splashText}
             style={styles.textStyle}

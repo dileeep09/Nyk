@@ -2,5 +2,6 @@ export const COLORS={
     WHITE:'#FFFFFF',
     BLACK:'#000000',
     APP_PRIMARY_COLOR:'#0D7C9C',
-    GREY:'#667085'
+    GREY:'#667085',
+    LIGHT_GREY:'#D0D5DD'
 }

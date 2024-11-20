@@ -1,53 +1,36 @@
 import {CountryPicker} from 'react-native-country-codes-picker';
-import {StyleSheet, Text, TouchableOpacity, View, TextInput} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
-
-const CodePicker = () => {
+import {DeviceHeight} from '../Utilities/Config';
+import {COLORS} from '../Utilities/AppColors';
+import TextComponent from './TextComponent';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+const CodePicker = ({getCountryDetails, setCountryDetails}) => {
+  const [search, setSearch] = useState('');
   const [show, setShow] = useState(false);
-  const [countryCode, setCountryCode] = useState('+1'); // Default country code
-  const [search, setSearch] = useState(''); // Search term state
-
   return (
     <View style={styles.container}>
-      {/* Button to Open Picker */}
       <TouchableOpacity
-        onPress={() => setShow(true)}
-        style={styles.button}>
-        <Text style={styles.buttonText}>
-          {`Selected Code: ${countryCode}`}
-        </Text>
+        style={{flexDirection: 'row', alignItems: 'center'}}
+        activeOpacity={0.5}
+        onPress={() => setShow(true)}>
+        <TextComponent text={getCountryDetails?.country} />
+        <MaterialIcon name="chevron-down" size={20} color={COLORS.GREY} />
       </TouchableOpacity>
-
-      {/* Country Picker with Search Bar and Cancel Button */}
       {show && (
-        <View style={styles.modal}>
-          {/* Search Bar */}
-          <TextInput
-            style={styles.searchInput}
-            placeholder="Search country"
-            value={search}
-            onChangeText={setSearch}
-          />
-
-          {/* Cancel Button */}
-          <TouchableOpacity
-            style={styles.cancelButton}
-            onPress={() => setShow(false)}>
-            <Text style={styles.cancelButtonText}>Cancel</Text>
-          </TouchableOpacity>
-
-          {/* Country Picker */}
-          <CountryPicker
-            show={show}
-            pickerButtonOnPress={(item) => {
-              setCountryCode(item.dial_code);
-              setShow(false);
-            }}
-            searchMessage={search} // Pass search query to the picker
-            onBackdropPress={() => setShow(false)} // Close on backdrop press
-            style={styles.countryPickerStyles}
-          />
-        </View>
+        <CountryPicker
+          show={show}
+          pickerButtonOnPress={item => {
+            setCountryDetails({
+              code: item.dial_code,
+              country: item.code,
+            });
+            setShow(false);
+          }}
+          searchMessage={search}
+          onBackdropPress={() => setShow(false)}
+          style={styles.countryPickerStyles}
+        />
       )}
     </View>
   );
@@ -59,46 +42,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  button: {
-    width: '80%',
-    height: 50,
-    backgroundColor: 'black',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 10,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
-  },
-  modal: {
-    position: 'absolute',
-    top: '10%',
-    width: '90%',
-    backgroundColor: 'white',
-    borderRadius: 10,
-    padding: 10,
-    elevation: 5,
-  },
-  searchInput: {
-    height: 40,
-    borderColor: '#ddd',
-    borderWidth: 1,
-    borderRadius: 5,
-    marginBottom: 10,
-    paddingHorizontal: 10,
-  },
-  cancelButton: {
-    alignSelf: 'flex-end',
-    marginVertical: 5,
-  },
-  cancelButtonText: {
-    color: 'red',
-    fontSize: 16,
-  },
   countryPickerStyles: {
     itemsList: {
-      height: 300, // Limit picker height
+      height: DeviceHeight / 2.5, // Limit picker height
     },
   },
 });

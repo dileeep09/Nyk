@@ -2,12 +2,13 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {COLORS} from '../Utilities/AppColors';
 
-const TextComponent = ({type, textColor, text, fontSize, textAlign}) => {
+const TextComponent = ({type, textColor, text, fontSize, textAlign,onPress}) => {
   return (
     <Text
+    onPress={onPress}
       style={{
         color: textColor ?? COLORS.BLACK,
-        marginVertical: 3,
+        marginTop:3,
         textAlign: textAlign ?? 'center',
         fontSize:
           type == 'Heading'
@@ -16,7 +17,7 @@ const TextComponent = ({type, textColor, text, fontSize, textAlign}) => {
             ? fontSize ?? 18
             : fontSize ?? 15,
         fontWeight:
-          type == 'Heading' ? '600' : type == 'subHeading' ? '500' : '300',
+          type == 'Heading' ? '600' : type == 'subHeading' ? '500' : '400',
       }}>
       {text}
     </Text>
