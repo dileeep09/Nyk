@@ -2,22 +2,38 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {COLORS} from '../Utilities/AppColors';
 
-const TextComponent = ({type, textColor, text, fontSize, textAlign,onPress}) => {
+const TextComponent = ({
+  type,
+  textColor,
+  text,
+  fontSize,
+  textAlign,
+  onPress,
+  styles,
+  NOL,
+  fontWeight,
+}) => {
   return (
     <Text
-    onPress={onPress}
+      numberOfLines={NOL}
+      onPress={onPress}
       style={{
+        ...styles,
         color: textColor ?? COLORS.BLACK,
-        marginTop:3,
+        marginTop: 3,
         textAlign: textAlign ?? 'center',
         fontSize:
           type == 'Heading'
-            ? fontSize ?? 24
+            ? fontSize ?? 26
             : type == 'subHeading'
-            ? fontSize ?? 18
+            ? fontSize ?? 22
             : fontSize ?? 15,
         fontWeight:
-          type == 'Heading' ? '600' : type == 'subHeading' ? '500' : '400',
+          fontWeight ?? type == 'Heading'
+            ? '700'
+            : type == 'subHeading'
+            ? '600'
+            : '400',
       }}>
       {text}
     </Text>
@@ -25,5 +41,3 @@ const TextComponent = ({type, textColor, text, fontSize, textAlign,onPress}) => 
 };
 
 export default TextComponent;
-
-const styles = StyleSheet.create({});

@@ -1,3 +1,6 @@
 export default {
-    LOGGEDIN:'LOGGEDIN'
+    USER_DATA:'USER_DATA',
+    CART:'CART',
+    WISHLIST:'WISHLIST',
+    ADDRESS:'ADDRESS'
 }

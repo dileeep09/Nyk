@@ -1,11 +1,20 @@
 import types from './Constants';
 const initialState = {
-  getLogin: false,
+  getUserData: {},
+  getCartItems: [],
+  getWishList: [],
+  userAddress: '',
 };
 const Reducers = (state = initialState, action) => {
   switch (action.type) {
-    case types.LOGGEDIN:
-      return {...state, getLogin: action.payload};
+    case types.USER_DATA:
+      return {...state, getUserData: action.payload};
+    case types.CART:
+      return {...state, getCartItems: action.payload};
+    case types.WISHLIST:
+      return {...state, getWishList: action.payload};
+    case types.ADDRESS:
+      return {...state, userAddress: action.payload};
     default:
       return initialState;
   }
