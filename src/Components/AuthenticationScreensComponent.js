@@ -57,9 +57,8 @@ const AuthenticationScreensComponent = ({navigation, type}) => {
         password: values.password,
         name: values.name,
       });
-
+       
       if (responseData?.data?.message === 'Registration successful') {
-        console.log('response', responseData?.data);
         ToastAndroid.show(responseData?.data?.message, ToastAndroid.LONG);
         dispatch(setUserData(responseData?.data))
         navigation.replace('BottomTabs');
@@ -88,7 +87,6 @@ const AuthenticationScreensComponent = ({navigation, type}) => {
         navigation.replace('BottomTabs');
         dispatch(setUserData(responseData?.data))
       } else {
-        actions.resetForm();
         ToastAndroid.show(responseData?.message, ToastAndroid.LONG);
       }
     } catch (error) {
@@ -242,7 +240,7 @@ const AuthenticationScreensComponent = ({navigation, type}) => {
         leftIcon={IMAGES.google}
         buttonText={`Sign ${trueValue ? 'up' : 'in'} with Google`}
         buttonStyles={{borderColor: COLORS.LIGHT_GREY,width:DeviceWidth*0.9}}
-        onPress={()=>navigation.navigate("BottomTabs")}
+        onPress={()=>navigation.replace("BottomTabs")}
       />
       <CustomButton
         leftIcon={IMAGES.apple}

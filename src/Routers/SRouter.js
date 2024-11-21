@@ -7,6 +7,7 @@ import BottomTabs from './BottomTabs';
 import SingleCategory from '../Screens/SingleCategory';
 import ProductDetails from '../Screens/ProductDetails';
 import CheckoutScreen from '../Screens/CheckoutScreen';
+import Search from '../Screens/Search';
 const SRouter = () => {
   const Stack = createStackNavigator();
   const screenOptions = {headerShown: false};
@@ -19,6 +20,7 @@ const SRouter = () => {
       <Stack.Screen name="SingleCategory" component={SingleCategory} />
       <Stack.Screen name="ProductDetails" component={ProductDetails} />
       <Stack.Screen name="CheckoutScreen" component={CheckoutScreen} />
+      <Stack.Screen name='Search' component={Search}/>
     </Stack.Navigator>
   );
 };
