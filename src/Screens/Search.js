@@ -15,7 +15,7 @@ import {BASE_URL, callApi} from '../Utilities/ApiCall';
 import Loader from '../Components/Loader';
 import Cards from '../Components/Cards';
 import TextComponent from '../Components/TextComponent';
-import { DeviceHeight } from '../Utilities/Config';
+import {DeviceHeight} from '../Utilities/Config';
 
 // Auto-suggestions list (e.g., recent search or suggestions list)
 const autoSuggestions = [
@@ -68,7 +68,6 @@ const Search = () => {
 
   // Filter products based on search text
   const handleSearchButtonClick = () => {
-
     if (searchText.trim()) {
       // Filter products based on product_type
       const filtered = filteredProducts.filter(product =>
@@ -164,7 +163,7 @@ const Search = () => {
         {filteredProducts.length > 0 && (
           <>
             <FlatList
-            contentContainerStyle={{paddingBottom:DeviceHeight/2}}
+              contentContainerStyle={{paddingBottom: DeviceHeight / 2}}
               data={filteredProducts}
               keyExtractor={item => item.id}
               renderItem={renderItem}
@@ -209,7 +208,7 @@ const styles = StyleSheet.create({
   searchButton: {
     backgroundColor: COLORS.APP_PRIMARY_COLOR,
     paddingVertical: 14,
-    paddingHorizontal: 20,  // Added padding to both sides for flexibility
+    paddingHorizontal: 20, // Added padding to both sides for flexibility
     borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',

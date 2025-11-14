@@ -78,7 +78,7 @@ const SingleCategory = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header text={heading} backButton/>
+      <Header text={heading} backButton />
       <View style={styles.sortOptions}>
         <CustomButton
           buttonStyles={{marginRight: 10}}

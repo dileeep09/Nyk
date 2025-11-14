@@ -18,7 +18,7 @@ const Signup = () => {
           textColor={COLORS.GREY}
         />
       </View>
-      <AuthenticationScreensComponent navigation={navigation} type={'Signup'}/>
+      <AuthenticationScreensComponent navigation={navigation} type={'Signup'} />
       <View style={{flexDirection: 'row', alignSelf: 'center'}}>
         <TextComponent
           text={"Don't have an account? "}

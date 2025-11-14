@@ -57,10 +57,10 @@ const AuthenticationScreensComponent = ({navigation, type}) => {
         password: values.password,
         name: values.name,
       });
-       
+
       if (responseData?.data?.message === 'Registration successful') {
         ToastAndroid.show(responseData?.data?.message, ToastAndroid.LONG);
-        dispatch(setUserData(responseData?.data))
+        dispatch(setUserData(responseData?.data));
         navigation.replace('BottomTabs');
       } else {
         ToastAndroid.show(responseData?.data?.message, ToastAndroid.LONG);
@@ -85,7 +85,7 @@ const AuthenticationScreensComponent = ({navigation, type}) => {
       if (responseData?.status) {
         ToastAndroid.show(responseData?.message, ToastAndroid.LONG);
         navigation.replace('BottomTabs');
-        dispatch(setUserData(responseData?.data))
+        dispatch(setUserData(responseData?.data));
       } else {
         ToastAndroid.show(responseData?.message, ToastAndroid.LONG);
       }
@@ -228,7 +228,10 @@ const AuthenticationScreensComponent = ({navigation, type}) => {
             <CustomButton
               loader={loader}
               buttonText={trueValue ? 'Create an account' : 'Sign in now'}
-              buttonStyles={{backgroundColor: COLORS.APP_PRIMARY_COLOR,width:DeviceWidth*0.9}}
+              buttonStyles={{
+                backgroundColor: COLORS.APP_PRIMARY_COLOR,
+                width: DeviceWidth * 0.9,
+              }}
               textStyles={{color: COLORS.WHITE}}
               rightIcon={'arrow-right'}
               onPress={handleSubmit}
@@ -239,8 +242,11 @@ const AuthenticationScreensComponent = ({navigation, type}) => {
       <CustomButton
         leftIcon={IMAGES.google}
         buttonText={`Sign ${trueValue ? 'up' : 'in'} with Google`}
-        buttonStyles={{borderColor: COLORS.LIGHT_GREY,width:DeviceWidth*0.9}}
-        onPress={()=>navigation.replace("BottomTabs")}
+        buttonStyles={{
+          borderColor: COLORS.LIGHT_GREY,
+          width: DeviceWidth * 0.9,
+        }}
+        onPress={() => navigation.replace('BottomTabs')}
       />
       <CustomButton
         leftIcon={IMAGES.apple}
@@ -248,7 +254,7 @@ const AuthenticationScreensComponent = ({navigation, type}) => {
         buttonStyles={{
           backgroundColor: COLORS.BLACK,
           borderColor: COLORS.BLACK,
-          width:DeviceWidth*0.9
+          width: DeviceWidth * 0.9,
         }}
         textStyles={{color: COLORS.WHITE}}
       />

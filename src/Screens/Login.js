@@ -19,7 +19,7 @@ const Login = () => {
           textColor={COLORS.GREY}
         />
       </View>
-      <AuthenticationScreensComponent navigation={navigation}/>
+      <AuthenticationScreensComponent navigation={navigation} />
       <View style={{flexDirection: 'row', alignSelf: 'center'}}>
         <TextComponent
           text={"Don't have an account? "}

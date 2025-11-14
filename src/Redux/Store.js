@@ -13,7 +13,7 @@ import mmkvStoarge from './StorageEngine';
 import Reducers from './Reducers';
 const config = {
   key: 'root',
-  storage: mmkvStoarge
+  storage: mmkvStoarge,
 };
 
 const persistReduce = persistReducer(config, Reducers);

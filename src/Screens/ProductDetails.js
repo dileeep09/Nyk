@@ -20,19 +20,19 @@ const ProductDetails = () => {
   const {product} = route.params;
 
   const dispatch = useDispatch();
-  const getCartItems = useSelector((state) => state?.getCartItems);
-  const getWishList = useSelector((state) => state?.getWishList);
+  const getCartItems = useSelector(state => state?.getCartItems);
+  const getWishList = useSelector(state => state?.getWishList);
 
   // Handle Add to Cart
   const handleAddToCart = () => {
-    const isAlreadyInCart = getCartItems?.some((item) => item.id === product.id);
+    const isAlreadyInCart = getCartItems?.some(item => item.id === product.id);
 
     if (isAlreadyInCart) {
       Alert.alert('Info', 'This product is already in your cart.');
       return;
     }
 
-    const updatedCart = [...getCartItems, {...product,quantity:1}];
+    const updatedCart = [...getCartItems, {...product, quantity: 1}];
     dispatch(setCartItems(updatedCart));
     Alert.alert('Success', `${product.name} has been added to the cart!`);
   };
@@ -40,7 +40,7 @@ const ProductDetails = () => {
   // Handle Add to Wishlist
   const handleAddToWishList = () => {
     const isAlreadyInWishList = getWishList?.some(
-      (item) => item.id === product.id
+      item => item.id === product.id,
     );
 
     if (isAlreadyInWishList) {
@@ -55,7 +55,7 @@ const ProductDetails = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header text="Product Details" backButton/>
+      <Header text="Product Details" backButton />
       <ScrollView contentContainerStyle={styles.contentContainer}>
         {/* Product Image */}
         <Image
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   addToWishListButton: {
-    backgroundColor: COLORS.WHITE, 
+    backgroundColor: COLORS.WHITE,
     borderColor: COLORS.APP_PRIMARY_COLOR,
     width: '100%',
   },

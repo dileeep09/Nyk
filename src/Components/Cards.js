@@ -5,7 +5,7 @@ import TextComponent from './TextComponent';
 import {COLORS} from '../Utilities/AppColors';
 import {useNavigation} from '@react-navigation/native';
 const Cards = ({item, onPress}) => {
-  const navigation=useNavigation()
+  const navigation = useNavigation();
   return (
     <TouchableOpacity
       style={styles.container}
