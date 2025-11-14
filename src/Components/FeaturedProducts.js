@@ -14,7 +14,7 @@ const FeaturedProducts = () => {
   }, []);
   // Fetch featured products
   const getFeaturedProducts = async () => {
-    const category = 'blush'; 
+    const category = 'blush';
     try {
       const products = await callApi(BASE_URL, 'GET', {product_type: category});
       setFeaturedProducts(products);

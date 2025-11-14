@@ -1,7 +1,7 @@
 import {io} from 'socket.io-client';
 
 const SOCKET_URL = 'https://sooprs.com:3002';
-let socket = null; 
+let socket = null;
 
 // Initializing socket connection
 const initializeSocket = async (user_id, gorder_id) => {

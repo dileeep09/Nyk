@@ -92,7 +92,7 @@ const Cart = () => {
       ? getCartItems?.length < 1
         ? Alert.alert('Error', 'Cart is empty.')
         : navigation.navigate('CheckoutScreen', {
-          totalAmount: calculateTotalPrice(),
+            totalAmount: calculateTotalPrice(),
           })
       : Alert.alert('Error', 'Please add a shipping address first.');
   };

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Modal, View, Text, TextInput, StyleSheet, Alert } from 'react-native';
+import React, {useState} from 'react';
+import {Modal, View, Text, TextInput, StyleSheet, Alert} from 'react-native';
 import CustomButton from '../Components/CustomButton';
-import { COLORS } from '../Utilities/AppColors';
-import { useDispatch } from 'react-redux';
-import { setUserAddress } from '../Redux/Actions';
+import {COLORS} from '../Utilities/AppColors';
+import {useDispatch} from 'react-redux';
+import {setUserAddress} from '../Redux/Actions';
 
-const AddressModal = ({ visible, onClose }) => {
+const AddressModal = ({visible, onClose}) => {
   const dispatch = useDispatch();
 
   const [name, setName] = useState('');
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     width: '90%',
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
+    shadowOffset: {width: 0, height: 4},
     shadowOpacity: 0.2,
     shadowRadius: 8,
     elevation: 5,
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
     paddingVertical: 12,
     borderRadius: 8,
-    borderColor:'red'
+    borderColor: 'red',
   },
   cancelButtonText: {
     color: COLORS.WHITE,

@@ -54,27 +54,27 @@ export default CustomButton;
 
 const styles = StyleSheet.create({
   buttonStyle: {
-    flexDirection: 'row', 
-    alignItems: 'center', 
-    justifyContent: 'center', 
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
     borderWidth: 1.5,
     borderColor: COLORS.APP_PRIMARY_COLOR,
     paddingVertical: 10,
     paddingHorizontal: 15,
-    alignSelf: 'center', 
+    alignSelf: 'center',
     borderRadius: 6,
     marginVertical: 8,
     backgroundColor: COLORS.WHITE,
   },
   content: {
     flexDirection: 'row',
-    alignItems: 'center', 
+    alignItems: 'center',
   },
   textStyle: {
     color: COLORS.APP_PRIMARY_COLOR,
     fontSize: 17,
     fontWeight: '400',
-    marginHorizontal: 10, 
+    marginHorizontal: 10,
   },
   iconImage: {
     height: 30,

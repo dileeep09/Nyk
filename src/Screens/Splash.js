@@ -16,7 +16,7 @@ import Logo from '../Components/Logo';
 import {useSelector} from 'react-redux';
 import Loader from '../Components/Loader';
 import {object} from 'yup';
-import { DeviceWidth } from '../Utilities/Config';
+import {DeviceWidth} from '../Utilities/Config';
 const Splash = () => {
   const navigation = useNavigation();
   const [checkLogin, setCheckLogin] = useState(false);
@@ -58,7 +58,7 @@ const Splash = () => {
             <CustomButton
               buttonText={'Create an account'}
               onPress={handleNavigation}
-              buttonStyles={{width:DeviceWidth*0.9}}
+              buttonStyles={{width: DeviceWidth * 0.9}}
             />
             <CustomButton
               buttonStyles={styles.buttonStyle}
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   textStyle: {height: '25%', width: '65%', marginLeft: 16, marginTop: 20},
   buttonStyle: {
     backgroundColor: COLORS.APP_PRIMARY_COLOR,
-    width:DeviceWidth*0.9
+    width: DeviceWidth * 0.9,
   },
   buttonTextStyle: {color: COLORS.WHITE},
   buttonContainer: {position: 'absolute', bottom: 25, alignSelf: 'center'},

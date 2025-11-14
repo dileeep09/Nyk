@@ -1,4 +1,10 @@
-import {SafeAreaView, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import Logo from '../Components/Logo';
 import {COLORS} from '../Utilities/AppColors';
@@ -26,7 +32,9 @@ const Home = () => {
       <View style={styles.header}>
         <Logo />
         {/* Search Icon */}
-        <TouchableOpacity onPress={handleSearchNavigation} style={styles.searchIcon}>
+        <TouchableOpacity
+          onPress={handleSearchNavigation}
+          style={styles.searchIcon}>
           <Icon name="search" size={24} color={COLORS.DARK_GRAY} />
         </TouchableOpacity>
       </View>
@@ -60,7 +68,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.WHITE,
   },
   searchIcon: {
-    padding: 8, 
+    padding: 8,
   },
   wrapper: {
     width: DeviceWidth * 0.9,

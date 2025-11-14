@@ -16,8 +16,8 @@ const BottomTabs = () => {
           flexDirection: 'row',
           paddingVertical: 15,
           backgroundColor: COLORS.WHITE,
-          borderTopWidth:1,
-          borderTopColor:COLORS.LIGHT_GREY
+          borderTopWidth: 1,
+          borderTopColor: COLORS.LIGHT_GREY,
         }}>
         {state.routes.map((route, index) => {
           const {options} = descriptors[route.key];
@@ -34,7 +34,7 @@ const BottomTabs = () => {
           };
           return (
             <TouchableOpacity
-            activeOpacity={0.5}
+              activeOpacity={0.5}
               key={route.key}
               accessibilityState={isFocused ? {selected: true} : {}}
               accessibilityLabel={options.tabBarAccessibilityLabel}
@@ -47,7 +47,7 @@ const BottomTabs = () => {
               }}>
               <Image
                 source={options.tabBarIcon}
-                style={{height: 28, width: 28,marginBottom:4}}
+                style={{height: 28, width: 28, marginBottom: 4}}
                 resizeMode="contain"
                 tintColor={isFocused ? COLORS.APP_PRIMARY_COLOR : COLORS.GREY}
               />

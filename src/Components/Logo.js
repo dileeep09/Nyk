@@ -4,7 +4,7 @@ import {IMAGES} from '../Utilities/Images';
 
 const Logo = ({alignSelf}) => {
   return (
-    <View style={{alignSelf:alignSelf??'flex-start'}}>
+    <View style={{alignSelf: alignSelf ?? 'flex-start'}}>
       <Image
         source={IMAGES.logo}
         style={styles.logoStyle}

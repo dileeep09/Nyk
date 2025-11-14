@@ -20,7 +20,7 @@ const SRouter = () => {
       <Stack.Screen name="SingleCategory" component={SingleCategory} />
       <Stack.Screen name="ProductDetails" component={ProductDetails} />
       <Stack.Screen name="CheckoutScreen" component={CheckoutScreen} />
-      <Stack.Screen name='Search' component={Search}/>
+      <Stack.Screen name="Search" component={Search} />
     </Stack.Navigator>
   );
 };
